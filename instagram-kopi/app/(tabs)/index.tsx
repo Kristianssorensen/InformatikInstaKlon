@@ -39,5 +39,5 @@ const styles = StyleSheet.create({
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 24 },
   imagePicker: { width: '100%', height: 300, backgroundColor: '#d00000', borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginBottom: 16,},
   imagePlaceholder: { color: '#999', fontSize: 16 },
-  image: { width: '100%', height: 300, borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginBottom: 16,}//magler faktisk at dislay image
+  image: { width: '100%', height: 300, borderRadius: 12, justifyContent: 'center', alignItems: 'center',}
 });
