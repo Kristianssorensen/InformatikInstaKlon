@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity  } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useState } from "react";
 import * as ImagePicker from 'expo-image-picker'
 
@@ -20,10 +20,13 @@ export default function UploadScreen() {
 //det der bliver printet til skærmen
   return(
     <View style={styles.container}>
-      <Text style={styles.title}>Upload billed</Text>
-      <TouchableOpacity style={styles.imagePicker}>
-        <Text style={styles.imagePlaceholder} onPress={pickImage}>Tryk for at vælge billede</Text>
-      </TouchableOpacity>
+      <TouchableOpacity style={styles.imagePicker} onPress={pickImage}>
+        {image ? (
+          <Image source={{ uri: image }} style={styles.image} />
+        ) : (
+          <Text style={styles.imagePlaceholder}>Tryk for at vælge billede</Text>
+        )}
+</TouchableOpacity>
     </View>
   );
 }
@@ -34,6 +37,7 @@ export default function UploadScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 24, backgroundColor: '#ffffff', paddingTop: 80 },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 24 },
-  imagePicker: { width: '100%', height: 300, backgroundColor: '#f0f0f0', borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginBottom: 16,},
+  imagePicker: { width: '100%', height: 300, backgroundColor: '#d00000', borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginBottom: 16,},
   imagePlaceholder: { color: '#999', fontSize: 16 },
+  image: { width: '100%', height: 300, borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginBottom: 16,}//magler faktisk at dislay image
 });
