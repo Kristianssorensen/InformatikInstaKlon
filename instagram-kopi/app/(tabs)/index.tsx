@@ -1,6 +1,9 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useState } from "react";
 import * as ImagePicker from 'expo-image-picker'
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { collection, addDoc, serverTimestamp, Firestore } from 'firebase/firestore';
+import { storage, db } from '@/firebase';
 
 export default function UploadScreen() {
   const [image, setImage] = useState(null);
@@ -15,7 +18,14 @@ export default function UploadScreen() {
   if (!result.canceled) {
     setImage(result.assets[0].uri)
   }
+
+  //funktion til uplaod
+  const uploadImage = async () => {
+    
+
+  }
 };
+
 
 //det der bliver printet til skærmen
   return(
