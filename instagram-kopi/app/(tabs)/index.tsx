@@ -26,7 +26,10 @@ export default function UploadScreen() {
         ) : (
           <Text style={styles.imagePlaceholder}>Tryk for at vælge billede</Text>
         )}
-</TouchableOpacity>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Upload</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -35,9 +38,11 @@ export default function UploadScreen() {
 
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 24, backgroundColor: '#ffffff', paddingTop: 80 },
+  container: { flex: 1, padding: 24, backgroundColor: '#e9e9e9', paddingTop: 80 },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 24 },
   imagePicker: { width: '100%', height: 300, backgroundColor: '#d00000', borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginBottom: 16,},
   imagePlaceholder: { color: '#999', fontSize: 16 },
-  image: { width: '100%', height: 300, borderRadius: 12, justifyContent: 'center', alignItems: 'center',}
+  image: { width: '100%', height: 300, borderRadius: 12, justifyContent: 'center', alignItems: 'center',},
+  button: { backgroundColor: '#0a7ea4', padding: 16, borderRadius: 8, alignItems: 'center', marginTop: 16 },
+  buttonText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
 });
